@@ -1,0 +1,17 @@
+.cache/
+build/
+Drivers/
+Src/sys*
+Src/stm*
+Inc/stm*
+cmake/
+CMakePresets.json
+.mxproject
+openocd.cfg
+*.s
+*.ld
+*.json
+*/spi*
+*/usart*
+*/dma*
+*/gpio*
