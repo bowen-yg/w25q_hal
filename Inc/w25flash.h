@@ -6,7 +6,7 @@
 #define SPI_PORT hspi1
 #define __Select_Flash() HAL_GPIO_WritePin(CS_PORT,CS_PIN,0);
 #define __Deselect_Flash() HAL_GPIO_WritePin(CS_PORT,CS_PIN,1);
-#define FLASH_PAGE 256
+#define FLASH_PAGE_SIZE_F1 256
 #define FLASH_SECTOR_SIZE 4096
 #define FLASH_SECTOR_COUNT 4096
 uint16_t W25Q_ReadID(void);

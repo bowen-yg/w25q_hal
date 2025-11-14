@@ -165,13 +165,13 @@ void W25Q_WriteSector(uint32_t addr,const uint8_t* pbuf,uint16_t count){
     W25Q_EraseSector(startAddr);
     startAddr+=FLASH_SECTOR_SIZE;
   }
-  uint16_t left=count%FLASH_PAGE_SIZE;
-  uint16_t pcCount=count/FLASH_PAGE_SIZE;
+  uint16_t left=count%FLASH_PAGE_SIZE_F1;
+  uint16_t pcCount=count/FLASH_PAGE_SIZE_F1;
   uint8_t* buff=pbuf;
   for(uint16_t i=0;i<pcCount;++i){
-    W25Q_WriteInPage(addr,buff,FLASH_PAGE_SIZE);
-    addr+=FLASH_PAGE_SIZE;
-    buff+=FLASH_PAGE_SIZE;
+    W25Q_WriteInPage(addr,buff,FLASH_PAGE_SIZE_F1);
+    addr+=FLASH_PAGE_SIZE_F1;
+    buff+=FLASH_PAGE_SIZE_F1;
   }
   if(left > 0) W25Q_WriteInPage(addr,buff,left);
 }
